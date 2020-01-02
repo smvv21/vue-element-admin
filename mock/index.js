@@ -6,11 +6,14 @@ import role from './role'
 import article from './article'
 import search from './remote-search'
 
+import order from './order'
+
 const mocks = [
   ...user,
   ...role,
   ...article,
-  ...search
+  ...search,
+  ...order
 ]
 
 // for front mock

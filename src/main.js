@@ -1,3 +1,10 @@
+window.__debug = function() {
+  if (process.env.NODE_ENV !== 'development') {
+    return
+  }
+  console.log.apply(console, arguments)
+}
+
 import Vue from 'vue'
 
 import Cookies from 'js-cookie'
@@ -28,7 +35,7 @@ import * as filters from './filters' // global filters
  * please remove it before going online! ! !
  */
 import { mockXHR } from '../mock'
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'development') {
   mockXHR()
 }
 
@@ -42,6 +49,11 @@ Object.keys(filters).forEach(key => {
 })
 
 Vue.config.productionTip = false
+
+// http
+import { $get, $post } from '@/utils/http'
+Vue.prototype.$get = $get
+Vue.prototype.$post = $post
 
 new Vue({
   el: '#app',

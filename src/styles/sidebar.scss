@@ -207,3 +207,16 @@
     }
   }
 }
+
+
+//override
+#app .sidebar-container{
+  .el-menu-item{
+    color: #ccc !important;
+    &:hover,
+    &.is-active{
+      color: #fff !important;
+    	  background: #000000 !important;
+    }
+  }
+}

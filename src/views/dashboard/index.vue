@@ -1,17 +1,22 @@
 <template>
   <div class="dashboard-container">
-    <component :is="currentRole" />
+    <div class="content-box">
+      <el-row>
+        <el-col>
+          <el-card shadow="hover">
+            欢迎 {{ name }}
+          </el-card>
+        </el-col>
+      </el-row>
+    </div>
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
-import adminDashboard from './admin'
-import editorDashboard from './editor'
 
 export default {
   name: 'Dashboard',
-  components: { adminDashboard, editorDashboard },
   data() {
     return {
       currentRole: 'adminDashboard'
@@ -19,7 +24,8 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'roles'
+      'roles',
+      'name'
     ])
   },
   created() {
