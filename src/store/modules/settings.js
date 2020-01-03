@@ -1,15 +1,7 @@
 import variables from '@/styles/element-variables.scss'
 import defaultSettings from '@/settings'
 
-const { showSettings, tagsView, fixedHeader, sidebarLogo } = defaultSettings
-
-const state = {
-  theme: variables.theme,
-  showSettings: showSettings,
-  tagsView: tagsView,
-  fixedHeader: fixedHeader,
-  sidebarLogo: sidebarLogo
-}
+const state = Object.assign({}, defaultSettings)
 
 const mutations = {
   CHANGE_SETTING: (state, { key, value }) => {
@@ -31,4 +23,3 @@ export default {
   mutations,
   actions
 }
-
