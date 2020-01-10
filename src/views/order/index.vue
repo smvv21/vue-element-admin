@@ -67,6 +67,7 @@
           width="100"
         >
           <template slot-scope="scope">
+            <router-link to="/order/detail?id=999" class="mr8 el-link el-link--success">详情</router-link>
             <el-button type="text" @click="handleClick(scope.row)">编辑</el-button>
           </template>
         </el-table-column>

@@ -118,6 +118,16 @@ export const asyncRoutes = [
           title: '订单列表',
           roles: ['admin'] // or you can only set roles in sub nav
         }
+      },
+      {
+        hidden: true,
+        path: 'detail',
+        component: () => import('@/views/order/detail'),
+        name: 'OrderDetail',
+        meta: {
+          title: '订单详情',
+          roles: ['admin'] // or you can only set roles in sub nav
+        }
       }
     ]
   },
