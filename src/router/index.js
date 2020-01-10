@@ -131,6 +131,29 @@ export const asyncRoutes = [
       }
     ]
   },
+  
+  {
+    path: '/manager',
+    component: Layout,
+    redirect: '/manager/index',
+    name: 'Manager',
+    meta: {
+      title: '成员管理',
+      icon: 'tree',
+      roles: ['admin', 'manager'] // you can set roles in root nav
+    },
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/manager/index'),
+        name: 'ManagerIndex',
+        meta: {
+          title: '成员列表',
+          roles: ['admin'] // or you can only set roles in sub nav
+        }
+      }
+    ]
+  },
 
   /** when your routing map is too long, you can split it into small modules **/
   // 404 page must be placed at the end !!!

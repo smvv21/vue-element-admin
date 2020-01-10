@@ -7,13 +7,15 @@ import article from './article'
 import search from './remote-search'
 
 import order from './order'
+import manager from './manager'
 
 const mocks = [
   ...user,
   ...role,
   ...article,
   ...search,
-  ...order
+  ...order,
+  ...manager
 ]
 
 // for front mock
