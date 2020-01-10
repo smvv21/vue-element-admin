@@ -64,11 +64,11 @@
         <el-table-column
           fixed="right"
           label="操作"
-          width="100"
+          width="140"
         >
           <template slot-scope="scope">
-            <router-link to="/order/detail?id=999" class="mr8 el-link el-link--success">详情</router-link>
-            <el-button type="text" @click="handleClick(scope.row)">编辑</el-button>
+            <router-link to="/order/detail?id=999"><el-button type="success" size="mini">详情</el-button></router-link>
+            <el-button type="primary" size="mini" @click="handleClick(scope.row)">编辑</el-button>
           </template>
         </el-table-column>
       </el-table>
